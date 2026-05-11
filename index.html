@@ -36,16 +36,21 @@
         /* --- AQUÍ ESTÁ EL MEDIA QUERIE PARA CELULAR --- */
         @media (max-width: 768px) {
             .main-container {
-                flex-direction: column; /* En celular, las columnas se ponen una debajo de otra */
+                display: block !important; /* En celular, las columnas se ponen una debajo de otra */
             }
 
-            .col-izquierda, .col-derecha {
-                width: 100%; /* Ocupan todo el ancho en celular */
-                height: 200px; /* Les damos una altura fija para que no desaparezcan */
+            .col-izquierda, .col1-centro, .col-derecha {
+                width: 100% !important;
+                display: block;
+                height: auto;
+                min-height: 200px; /* Les damos una altura fija para que no desaparezcan */
             }
-            
+            h1, h2, .titulo {
+                font-size: 1.5rem;
+                text-align: cente;
+            }
             .header-footer {
-                height: auto; /* El encabezado se ajusta al contenido */
+                height: auto;
             }
         }
     </style>
