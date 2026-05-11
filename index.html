@@ -1,113 +1,13 @@
-
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    background:black;
-}
-
-/* PARTE SUPERIOR */
-.top{
-    display:flex;
-    height:25vh;
-    gap:2px; /* bordes visibles */
-    background:black;
-}
-
-/* CENTRO */
-.middle{
-    flex:1;
-    border-top:2px solid black;
-    border-bottom:2px solid black;
-}
-
-/* ABAJO */
-.bottom{
-    height:80px;
-}
-
-iframe{
-    border:none;
-    width:100%;
-    height:100%;
-    background:white;
-}
-
-/* TAMAÑOS */
-.p1{
-    width:25%; /* menos ancho */
-}
-
-.p2{
-    flex:1;
-}
-
-.p5{
-    width:15%; /* menos ancho */
-}
-
-/* CELULAR */
-@media(max-width:768px){
-
-    .top{
-        flex-direction:column;
-        height:45vh;
-    }
-
-    .p1,
-    .p2,
-    .p5{
-        width:100%;
-        height:33.3%;
-    }
-
-    .bottom{
-        height:60px;
-    }
-}
-
-</style>
 </head>
-
-<body>
-
-<div class="top">
-
-    <div class="p1">
-        <iframe src="pagina1.html"></iframe>
-    </div>
-
-    <div class="p2">
-        <iframe src="pagina2.html"></iframe>
-    </div>
-
-    <div class="p5">
-        <iframe src="pagina5.html"></iframe>
-    </div>
-
-</div>
-
-<div class="middle">
-    <iframe src="pagina3.html" name="centro"></iframe>
-</div>
-
-<div class="bottom">
-    <iframe src="pagina4.html"></iframe>
-</div>
-
-</body>
+<frameset rows="25%, *, 12%">
+  <frameset cols="35%, *, 20%">
+<frame src="pagina1.html">
+<frame src="pagina2.html">
+<frame src="pagina5.html">
+</frameset>
+<frame src="pagina3.html" name="centro">
+<frame src="pagina4.html">
+</frameset>
 </html>
