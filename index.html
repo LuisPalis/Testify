@@ -1,15 +1,78 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta name="viewport" content="width=device-width,
-    initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testify - LuisPalis</title>
+    <style>
+        /* Configuraciones generales */
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        /* Contenedor principal que imita tus columnas */
+        .main-container {
+            display: flex;
+            flex: 1; /* Esto hace que ocupe el espacio medio */
+        }
+
+        /* Estilo para las secciones (equivalente a tus frames) */
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* TAMAÑOS PARA PC */
+        .col-izquierda { width: 500px; }
+        .col-centro { flex: 1; }
+        .col-derecha { width: 200px; }
+        .header-footer { height: 80px; }
+
+        /* --- AQUÍ ESTÁ EL MEDIA QUERIE PARA CELULAR --- */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* En celular, las columnas se ponen una debajo de otra */
+            }
+
+            .col-izquierda, .col-derecha {
+                width: 100%; /* Ocupan todo el ancho en celular */
+                height: 200px; /* Les damos una altura fija para que no desaparezcan */
+            }
+            
+            .header-footer {
+                height: auto; /* El encabezado se ajusta al contenido */
+            }
+        }
+    </style>
 </head>
-<frameset rows="80, *, 80">
-<frameset cols="500, *, 200">
-<frame src="pagina1.html">
-<frame src="pagina2.html">
-<frame src="pagina5.html">
-</frameset>
-<frame src="pagina3.html" name="centro">
-<frame src="pagina4.html">
-</frameset>
+<body>
+
+    <div class="header-footer">
+        <iframe src="pagina1.html"></iframe>
+    </div>
+
+    <div class="main-container">
+        <div class="col-izquierda">
+            <iframe src="pagina2.html"></iframe>
+        </div>
+        
+        <div class="col-centro">
+            <iframe src="pagina3.html" name="centro"></iframe>
+        </div>
+
+        <div class="col-derecha">
+            <iframe src="pagina5.html"></iframe>
+        </div>
+    </div>
+
+    <div class="header-footer">
+        <iframe src="pagina4.html"></iframe>
+    </div>
+
+</body>
 </html>
