@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+if (window.innerWidth <= 768) {
+
+    document.write(`
+    <frameset cols="35%, *">
+        
+        <frameset rows="33%, 33%, *">
+            <frame src="Pages/pagina1.html">
+            <frame src="Pages/pagina2.html">
+            <frame src="Pages/pagina5.html">
+        </frameset>
+
+        <frameset rows="*, 80">
+            <frame src="Pages/pagina3.html" name="centro">
+            <frame src="Pages/pagina4.html">
+        </frameset>
+
+    </frameset>
+    `);
+
+} else {
+
+    document.write(`
+    <frameset rows="80, *, 80">
+
+        <frameset cols="500, *, 200">
+            <frame src="Pages/pagina1.html">
+            <frame src="Pages/pagina2.html">
+            <frame src="Pages/pagina5.html">
+        </frameset>
+
+        <frame src="Pages/pagina3.html" name="centro">
+        <frame src="Pages/pagina4.html">
+
+    </frameset>
+    `);
+
+}
+</script>
+
 </head>
-<frameset rows="80, *, 80">
-<frameset cols="500, *, 200">
-<frame src="Pages\pagina1.html">
-<frame src="Pages\pagina2.html">
-<frame src="Pages\pagina5.html">
-</frameset>
-<frame src="Pages\pagina3.html" name="centro">
-<frame src="Pages\pagina4.html">
-</frameset>
 </html>
