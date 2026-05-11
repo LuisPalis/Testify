@@ -1,48 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-if (window.innerWidth <= 768) {
+<style>
 
-    document.write(`
-    <frameset cols="35%, *">
-        
-        <frameset rows="33%, 33%, *">
-            <frame src="pagina1.html">
-            <frame src="pagina2.html">
-            <frame src="pagina5.html">
-        </frameset>
-
-        <frameset rows="*, 80">
-            <frame src="pagina3.html" name="centro">
-            <frame src="pagina4.html">
-        </frameset>
-
-    </frameset>
-    `);
-
-} else {
-
-    document.write(`
-    <frameset rows="80, *, 80">
-
-        <frameset cols="500, *, 200">
-            <frame src="pagina1.html">
-            <frame src="pagina2.html">
-            <frame src="pagina5.html">
-        </frameset>
-
-        <frame src="pagina3.html" name="centro">
-        <frame src="pagina4.html">
-
-    </frameset>
-    `);
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-</script>
 
+body{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.top{
+    display:flex;
+    height:25vh;
+}
+
+.middle{
+    flex:1;
+}
+
+.bottom{
+    height:80px;
+}
+
+iframe{
+    border:none;
+    width:100%;
+    height:100%;
+}
+
+.p1{
+    width:35%;
+}
+
+.p2{
+    flex:1;
+}
+
+.p5{
+    width:20%;
+}
+
+/* CELULAR */
+@media(max-width:768px){
+
+    .top{
+        flex-direction:column;
+        height:45vh;
+    }
+
+    .p1,
+    .p2,
+    .p5{
+        width:100%;
+        height:33.3%;
+    }
+
+    .bottom{
+        height:60px;
+    }
+}
+
+</style>
 </head>
+
+<body>
+
+<div class="top">
+
+    <div class="p1">
+        <iframe src="pagina1.html"></iframe>
+    </div>
+
+    <div class="p2">
+        <iframe src="pagina2.html"></iframe>
+    </div>
+
+    <div class="p5">
+        <iframe src="pagina5.html"></iframe>
+    </div>
+
+</div>
+
+<div class="middle">
+    <iframe src="pagina3.html" name="centro"></iframe>
+</div>
+
+<div class="bottom">
+    <iframe src="pagina4.html"></iframe>
+</div>
+
+</body>
 </html>
